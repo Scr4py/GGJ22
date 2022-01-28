@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
+   
+
     [SerializeField] private GameObject groundCheckCenter;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
@@ -28,18 +30,20 @@ public class PlayerController : MonoBehaviour
     {
         inputX = Input.GetAxisRaw("Horizontal");
         Debug.Log(isGrounded);
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            playerRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            isGrounded = false;
+        }
+
         Collider2D hitCollider = Physics2D.OverlapCircle(groundCheckCenter.transform.position, groundCheckRadius, groundLayer);
         if (hitCollider)
         {
             Debug.Log("isGrounded: " + isGrounded);
             isGrounded = true;
         }
+      
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            playerRigidbody.AddForce(new Vector2(0, jumpForce));
-            isGrounded = false;
-        }
     }
 
     private void FixedUpdate()
