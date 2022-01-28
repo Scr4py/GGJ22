@@ -8,7 +8,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
-   
+    [SerializeField] private float fasterFallMulti;
+    [SerializeField] private float lowFallMulti;
+
+
+
 
     [SerializeField] private GameObject groundCheckCenter;
     [SerializeField] private float groundCheckRadius;
@@ -42,7 +46,15 @@ public class PlayerController : MonoBehaviour
             Debug.Log("isGrounded: " + isGrounded);
             isGrounded = true;
         }
-      
+        if (  playerRigidbody.velocity.y < 0)
+        {
+            playerRigidbody.velocity += Vector2.up * Physics2D.gravity * (fasterFallMulti - 1) * Time.deltaTime;
+        }
+        else if (playerRigidbody.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            playerRigidbody.velocity += Vector2.up * Physics2D.gravity * (lowFallMulti - 1) * Time.deltaTime;
+
+        }
 
     }
 
