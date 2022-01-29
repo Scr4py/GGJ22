@@ -27,13 +27,16 @@ public class PlayerController : MonoBehaviour
     float movement;
     bool isGrounded;
     bool isArtist;
-
+    private Animator animator;
 
 
 
     void Start()
     {
         playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
+
+
     }
 
     // Update is called once per frame
@@ -67,18 +70,32 @@ public class PlayerController : MonoBehaviour
             if (!isArtist)
             {
                 isArtist = true;
+                animator.SetBool("isArtist", isArtist);
             }
             else
             {
                 isArtist = false;
+                animator.SetBool("isArtist", isArtist);
+
             }
             EventManager.F_SwitchEvent();
+        }
+        gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, transform.position.y);
+        if (inputX > 0)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+        //else if(playerRigidbody.velocity.x <= 0)
+        else if (inputX < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+
         }
     }
 
     private void FixedUpdate()
     {
-        //playerRigidbody.velocity = new Vector2(inputX * movementSpeed, playerRigidbody.velocity.y);
+        //playerRigidbody.velocity = new Vector2(inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, playerRigidbody.velocity.y);
         gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, transform.position.y);
     }
 
