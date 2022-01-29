@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float artistMovementSpeed;
+    [SerializeField] private float artistJumpForce;
+    [SerializeField] private float artistFasterFallMulti;
+    [SerializeField] private float artistLowFallMulti;
     [SerializeField] private float fasterFallMulti;
     [SerializeField] private float lowFallMulti;
 
@@ -22,6 +26,9 @@ public class PlayerController : MonoBehaviour
     float inputX;
     float movement;
     bool isGrounded;
+    bool isArtist;
+
+
 
 
     void Start()
@@ -33,10 +40,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         inputX = Input.GetAxisRaw("Horizontal");
-        Debug.Log(isGrounded);
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            playerRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            playerRigidbody.AddForce(new Vector2(0, isArtist ? artistJumpForce : jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
         }
 
@@ -48,24 +54,32 @@ public class PlayerController : MonoBehaviour
         }
         if (playerRigidbody.velocity.y < 0)
         {
-            playerRigidbody.velocity += Vector2.up * Physics2D.gravity * (fasterFallMulti - 1) * Time.deltaTime;
+            playerRigidbody.velocity += Vector2.up * Physics2D.gravity * (isArtist ? (artistFasterFallMulti - 1) : (fasterFallMulti - 1)) * Time.deltaTime;
         }
         else if (playerRigidbody.velocity.y > 0 && !Input.GetButton("Jump"))
         {
-            playerRigidbody.velocity += Vector2.up * Physics2D.gravity * (lowFallMulti - 1) * Time.deltaTime;
+            playerRigidbody.velocity += Vector2.up * Physics2D.gravity * (isArtist ? (artistLowFallMulti - 1) : (lowFallMulti - 1)) * Time.deltaTime;
         }
 
         if (Input.GetButtonDown("Switch"))
         {
+            Debug.Log(isArtist);
+            if (!isArtist)
+            {
+                isArtist = true;
+            }
+            else
+            {
+                isArtist = false;
+            }
             EventManager.F_SwitchEvent();
         }
-
     }
 
     private void FixedUpdate()
     {
         //playerRigidbody.velocity = new Vector2(inputX * movementSpeed, playerRigidbody.velocity.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * movementSpeed * Time.deltaTime, transform.position.y);
+        gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, transform.position.y);
     }
 
     private void InterAct()
