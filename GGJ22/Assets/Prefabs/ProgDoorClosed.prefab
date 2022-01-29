@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7887949243203794101}
   - component: {fileID: 5087059828228328444}
+  - component: {fileID: 889959996}
   m_Layer: 0
   m_Name: ProgDoorClosed
   m_TagString: Untagged
@@ -145,6 +146,21 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5087059828228328444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887949243203794106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080be53250e7ca04fb815ec3b8bb1cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 0
+  activated: 0
+  DoorOpen: {fileID: 0}
+--- !u!114 &889959996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
