@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
         Collider2D hitCollider = Physics2D.OverlapCircle(groundCheckCenter.transform.position, groundCheckRadius, groundLayer);
         if (hitCollider)
         {
-            Debug.Log("isGrounded: " + isGrounded);
             isGrounded = true;
             animator.SetBool("isFalling", false);
         }
@@ -107,7 +106,7 @@ public class PlayerController : MonoBehaviour
             EventManager.F_SwitchEvent();
         }
 
-        Debug.Log("Rigidbody Y " + playerRigidbody.velocity.y);
+
         if (!isGrounded && playerRigidbody.velocity.y > 0.03f)
         {
             Debug.Log("Macht das!");
@@ -122,12 +121,25 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
-        //else if(playerRigidbody.velocity.x <= 0)
         else if (inputX < 0)
         {
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (inputX == 0)
+        {
+            // animator.SetBool("isFalling", false);
+            animator.SetBool("isIdle", true);
+        }
+        else
+        {
+            animator.SetBool("isIdle", false);
 
         }
+
+        //else if(playerRigidbody.velocity.x <= 0)
+
+
         gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, transform.position.y);
     }
 

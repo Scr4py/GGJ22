@@ -28,7 +28,7 @@ public class Switch : Interactible
     {
         if (Input.GetKeyDown(KeyCode.E) && triggerStay)
         {
-            interactible.Activate();
+            //interactible.Activate();
         }
     }
 

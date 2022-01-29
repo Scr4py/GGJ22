@@ -27,6 +27,7 @@ public class ActivaterSwitch : MonoBehaviour
             Debug.Log("Did Submit");
             switchTwoRiddle.SetBool(number);
             spriteRenderer.sprite = activeSprite;
+            EventManager.F_UseButton();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
