@@ -11,6 +11,7 @@ public class SwitchRiddle : MonoBehaviour
     [SerializeField] GameObject winObject;
     [SerializeField] Sprite LampOn;
     [SerializeField] private int[] order;
+    [SerializeField] private PaulFX paulSound;
     int numberOfPressedSwitches;
 
 
@@ -27,6 +28,7 @@ public class SwitchRiddle : MonoBehaviour
         if (order[numberOfPressedSwitches] == numberOfOrder)
         {
             Debug.Log("itWorked");
+            AudioManager.Instance.PlaySoundOneTime(paulSound);
             lamps[numberOfPressedSwitches].sprite = LampOn;
             numberOfPressedSwitches++;
             if (numberOfPressedSwitches >= order.Length)
