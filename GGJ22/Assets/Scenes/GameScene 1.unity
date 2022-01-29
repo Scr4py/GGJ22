@@ -686,6 +686,13 @@ MonoBehaviour:
   - {fileID: 170955006}
   - {fileID: 170955005}
   onVolume: 1
+  jumpAudioSource: {fileID: 0}
+  jumpArtist:
+    Sound: {fileID: 0}
+    volume: 0
+  jumpProgger:
+    Sound: {fileID: 0}
+    volume: 0
 --- !u!4 &170955008
 Transform:
   m_ObjectHideFlags: 0
@@ -948,7 +955,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7779528, y: 1}
+    m_SensorSize: {x: 1.7791798, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
