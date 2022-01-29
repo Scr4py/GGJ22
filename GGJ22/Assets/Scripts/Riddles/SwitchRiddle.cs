@@ -9,7 +9,7 @@ public class SwitchRiddle : MonoBehaviour
     private RiddleInteractable[] interactibles;
     [SerializeField] private SpriteRenderer[] lamps;
     [SerializeField] GameObject winObject;
-
+    [SerializeField] Sprite LampOn;
     [SerializeField] private int[] order;
     int numberOfPressedSwitches;
 
@@ -27,14 +27,13 @@ public class SwitchRiddle : MonoBehaviour
         if (order[numberOfPressedSwitches] == numberOfOrder)
         {
             Debug.Log("itWorked");
-            lamps[numberOfPressedSwitches].color = Color.red;
+            lamps[numberOfPressedSwitches].sprite = LampOn;
             numberOfPressedSwitches++;
             if (numberOfPressedSwitches >= order.Length)
             {
                 isFinished = true;
                 //TODO: IMPLEMENT WIN LOGIK
-                winObject.SetActive(false);
-                Debug.Log("YOU WON BRO");
+                winObject.SetActive(true);
             }
         }
         else
