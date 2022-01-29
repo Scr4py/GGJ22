@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : Interactible
 {
-    public override void Activate()
+    public  void Activate()
     {
         Debug.Log("Nice");
     }
