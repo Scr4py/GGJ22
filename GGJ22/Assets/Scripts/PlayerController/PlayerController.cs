@@ -29,7 +29,20 @@ public class PlayerController : MonoBehaviour
     public bool isArtist;
     private Animator animator;
 
+    private void OnEnable()
+    {
+        EventManager.useButton += UseButton;
+    }
 
+    private void OnDisable()
+    {
+        EventManager.useButton -= UseButton;
+    }
+
+    private void UseButton()
+    {
+        animator.SetTrigger("UseButton");
+    }
 
     void Start()
     {
@@ -74,7 +87,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("isFalling", false);
-
         }
 
 
@@ -94,8 +106,11 @@ public class PlayerController : MonoBehaviour
             }
             EventManager.F_SwitchEvent();
         }
-        if (!isGrounded && playerRigidbody.velocity.y > 0.3f)
+
+        Debug.Log("Rigidbody Y " + playerRigidbody.velocity.y);
+        if (!isGrounded && playerRigidbody.velocity.y > 0.03f)
         {
+            Debug.Log("Macht das!");
             gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * (isArtist ? artistMovementSpeed / 3 : movementSpeed / 3) * Time.deltaTime, transform.position.y);
 
         }
@@ -119,7 +134,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //playerRigidbody.velocity = new Vector2(inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, playerRigidbody.velocity.y);
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, transform.position.y);
+        //gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, transform.position.y);
     }
 
     private void InterAct()
