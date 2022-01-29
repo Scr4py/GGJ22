@@ -2892,11 +2892,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13e3c5840477434c91439e306be8b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 15
   jumpForce: 8
-  artistMovementSpeed: 10
-  artistJumpForce: 13
-  artistFasterFallMulti: 10
+  artistMovementSpeed: 15
+  artistJumpForce: 10
+  artistFasterFallMulti: 8
   artistLowFallMulti: 30
   fasterFallMulti: 4
   lowFallMulti: 3
@@ -2988,7 +2988,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 1852146951, guid: 0f76738b665d76546b2e591bde44e2fa, type: 3}
+  m_Sprite: {fileID: 818236518, guid: 7cc07f1c69c881a4e8134d69ca285bd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
