@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
 
             }
             EventManager.F_SwitchEvent();
+            EventManager.F_SwitchWorld(isArtist ? World.ArtWorld : World.ProggerWorld);
         }
 
 

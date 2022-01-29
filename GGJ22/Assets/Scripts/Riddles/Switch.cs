@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Switch : Interactible
 {
-    public GameObject interactibleObject;
+    public GameObject[] interactibleObject;
 
     bool triggerStay = false;
 
-    private Interactible interactible;
+    private Interactible[] interactible;
 
 
     public void Start()
     {
-      interactible = interactibleObject.GetComponent<Interactible>();
+      interactible = interactibleObject.Select(x => x.gameObject.GetComponent<Interactible>()).ToArray();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +29,11 @@ public class Switch : Interactible
     {
         if (Input.GetKeyDown(KeyCode.E) && triggerStay)
         {
-            //interactible.Activate();
+            EventManager.F_UseButton();
+            for (int i = 0; i < interactible.Length; i++)
+            {
+                interactible[i].Activate();
+            }
         }
     }
 
