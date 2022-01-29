@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2339323882419833255}
   - component: {fileID: 2339323882419833248}
   - component: {fileID: 2339323882419833253}
+  - component: {fileID: 1833373228}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -124,7 +125,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 50
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -133,3 +134,17 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1833373228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339323882419833249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988f7b720fc228748a90bd29b146ceac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArtSprite: {fileID: 185230357, guid: 7385397914cc00a4e86d4c42fda094c9, type: 3}
+  ProggerSprite: {fileID: 21300000, guid: c8eae58ff1e39e54aaed03b94a401927, type: 3}

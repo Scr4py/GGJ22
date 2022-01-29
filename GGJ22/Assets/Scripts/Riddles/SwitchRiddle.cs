@@ -6,6 +6,7 @@ using System.Linq;
 public class SwitchRiddle : MonoBehaviour
 {
     [SerializeField]
+
     private Interactible[] interactibles;
 
     [SerializeField]
@@ -13,7 +14,7 @@ public class SwitchRiddle : MonoBehaviour
 
     [SerializeField]
     private List<int> currentOrder = new List<int>();
-
+    
     // Start is called before the first frame update
     void Start()
     {
