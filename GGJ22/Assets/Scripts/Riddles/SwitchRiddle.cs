@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class SwitchRiddle : MonoBehaviour
 {
     [SerializeField]
-    private Interactible[] interactibles;
+    private RiddleInteractable[] interactibles;
     [SerializeField] private SpriteRenderer[] lamps;
     [SerializeField] GameObject winObject;
 
