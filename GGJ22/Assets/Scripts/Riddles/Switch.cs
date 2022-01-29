@@ -21,7 +21,6 @@ public class Switch : Interactible
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Inside");
             triggerStay = true;
         }
     }
@@ -30,6 +29,7 @@ public class Switch : Interactible
     {
         if (Input.GetKeyDown(KeyCode.E) && triggerStay)
         {
+            EventManager.F_UseButton();
             for (int i = 0; i < interactible.Length; i++)
             {
                 interactible[i].Activate();
