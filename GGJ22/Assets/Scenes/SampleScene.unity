@@ -355,7 +355,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772021, y: 1}
+    m_SensorSize: {x: 1.7780374, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -928,26 +928,6 @@ PrefabInstance:
     - target: {fileID: 8753961098168956484, guid: d9ddc0818a2885d4b9d1705d2cf7a80a, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8753961098168956489, guid: d9ddc0818a2885d4b9d1705d2cf7a80a, type: 3}
-      propertyPath: jumpForce
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8753961098168956489, guid: d9ddc0818a2885d4b9d1705d2cf7a80a, type: 3}
-      propertyPath: lowFallMulti
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8753961098168956489, guid: d9ddc0818a2885d4b9d1705d2cf7a80a, type: 3}
-      propertyPath: fasterFallMulti
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8753961098168956489, guid: d9ddc0818a2885d4b9d1705d2cf7a80a, type: 3}
-      propertyPath: groundCheckRadius
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8753961098168956489, guid: d9ddc0818a2885d4b9d1705d2cf7a80a, type: 3}
-      propertyPath: negativeJumpForce
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8753961098168956490, guid: d9ddc0818a2885d4b9d1705d2cf7a80a, type: 3}
       propertyPath: m_RootOrder
