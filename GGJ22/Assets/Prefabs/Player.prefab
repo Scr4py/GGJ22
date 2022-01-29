@@ -101,9 +101,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  jumpForce: 300
+  jumpForce: 5
+  artistMovementSpeed: 30
+  artistJumpForce: 20
+  artistFasterFallMulti: 5
+  artistLowFallMulti: 5
+  fasterFallMulti: 4
+  lowFallMulti: 3
   groundCheckCenter: {fileID: 8753961098835709932}
-  groundCheckRadius: 0.5
+  groundCheckRadius: 0.25
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
