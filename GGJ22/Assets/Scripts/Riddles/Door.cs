@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Door : Interactible
 {
+    public GameObject DoorOpen;
+
     public override void Activate()
     {
-        Debug.Log("Nice");
+        DoorOpen.gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }
