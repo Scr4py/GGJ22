@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactible : MonoBehaviour
+public class RiddleInteractable : MonoBehaviour
 {
     public int NumberInOrder;
     [SerializeField] Sprite activeSprite;
@@ -48,3 +48,5 @@ public class Interactible : MonoBehaviour
 
     }
 }
+
+

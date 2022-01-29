@@ -1638,6 +1638,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &945816021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1469797763770810275, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+  m_PrefabInstance: {fileID: 1469797763638689398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &945816026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945816021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca3e15eaf53d604bad23b3ab6e42259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberInOrder: 1
+  activeSprite: {fileID: 21300000, guid: 69ddf4be58f1dba4eb7fc78497f58f06, type: 3}
+  inActive: {fileID: 21300000, guid: 8e81f3e50dc07014c85f511f602495a8, type: 3}
+  switchRiddle: {fileID: 1327393300}
 --- !u!1 &981406147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,6 +2432,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1327393300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+  m_PrefabInstance: {fileID: 1469797763638689398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb125b19cc23f84d893c40bed164b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1345868966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1469797762297014992, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+  m_PrefabInstance: {fileID: 1469797763638689398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1345868971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345868966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca3e15eaf53d604bad23b3ab6e42259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberInOrder: 2
+  activeSprite: {fileID: 21300000, guid: 69ddf4be58f1dba4eb7fc78497f58f06, type: 3}
+  inActive: {fileID: 21300000, guid: 8e81f3e50dc07014c85f511f602495a8, type: 3}
+  switchRiddle: {fileID: 1327393300}
+--- !u!1 &1420275665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1469797762374521255, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+  m_PrefabInstance: {fileID: 1469797763638689398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420275670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420275665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca3e15eaf53d604bad23b3ab6e42259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberInOrder: 3
+  activeSprite: {fileID: 21300000, guid: 69ddf4be58f1dba4eb7fc78497f58f06, type: 3}
+  inActive: {fileID: 21300000, guid: 8e81f3e50dc07014c85f511f602495a8, type: 3}
+  switchRiddle: {fileID: 1327393300}
 --- !u!1 &1424481646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,6 +3361,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1870532232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1469797763048206590, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+  m_PrefabInstance: {fileID: 1469797763638689398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1870532237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870532232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca3e15eaf53d604bad23b3ab6e42259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberInOrder: 0
+  activeSprite: {fileID: 21300000, guid: 69ddf4be58f1dba4eb7fc78497f58f06, type: 3}
+  inActive: {fileID: 21300000, guid: 8e81f3e50dc07014c85f511f602495a8, type: 3}
+  switchRiddle: {fileID: 1327393300}
 --- !u!1 &1871031104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3687,6 +3782,27 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!1 &2034618752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1469797762678468598, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+  m_PrefabInstance: {fileID: 1469797763638689398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2034618757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034618752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca3e15eaf53d604bad23b3ab6e42259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberInOrder: 4
+  activeSprite: {fileID: 21300000, guid: 69ddf4be58f1dba4eb7fc78497f58f06, type: 3}
+  inActive: {fileID: 21300000, guid: 8e81f3e50dc07014c85f511f602495a8, type: 3}
+  switchRiddle: {fileID: 1327393300}
 --- !u!1 &2060064923
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,6 +4005,50 @@ PrefabInstance:
       propertyPath: winObject
       value: 
       objectReference: {fileID: 1871031104}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1870532237}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[1]
+      value: 
+      objectReference: {fileID: 945816026}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[2]
+      value: 
+      objectReference: {fileID: 1345868971}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[3]
+      value: 
+      objectReference: {fileID: 1420275670}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[4]
+      value: 
+      objectReference: {fileID: 2034618757}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[5]
+      value: 
+      objectReference: {fileID: 2034618757}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[6]
+      value: 
+      objectReference: {fileID: 2034618757}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[7]
+      value: 
+      objectReference: {fileID: 2034618757}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[8]
+      value: 
+      objectReference: {fileID: 2034618757}
+    - target: {fileID: 1469797762513409122, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+      propertyPath: interactibles.Array.data[9]
+      value: 
+      objectReference: {fileID: 2034618757}
     - target: {fileID: 1469797762513409123, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -3937,7 +4097,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampRiddle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1469797763048206591, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+    - {fileID: 1469797763770810272, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+    - {fileID: 1469797762678468599, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+    - {fileID: 1469797762374521252, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
+    - {fileID: 1469797762297014993, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94ea677ff3185934fa82e0d93b74c82a, type: 3}
 --- !u!1001 &4696979855824851529
 PrefabInstance:
