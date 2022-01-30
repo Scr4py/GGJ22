@@ -59,7 +59,10 @@ public class PlayerController : MonoBehaviour
             playerRigidbody.velocity = Vector2.up * (isArtist ? artistJumpForce : jumpForce);
             isGrounded = false;
             AudioManager.Instance.PlayJumpSound();
-            animator.SetTrigger("Jumped");
+            //animator.SetTrigger("Jumped");
+            animator.SetBool("isJumping", true);
+
+
             animator.SetBool("isFalling", false);
 
         }
@@ -74,16 +77,27 @@ public class PlayerController : MonoBehaviour
         {
             playerRigidbody.velocity += Vector2.up * Physics2D.gravity * (isArtist ? (artistFasterFallMulti - 1) : (fasterFallMulti - 1)) * Time.deltaTime;
             animator.SetBool("isFalling", true);
+            animator.SetBool("isJumping", false);
+
         }
         else if (playerRigidbody.velocity.y > 0 && !Input.GetButton("Jump"))
         {
             playerRigidbody.velocity += Vector2.up * Physics2D.gravity * (isArtist ? (artistLowFallMulti - 1) : (lowFallMulti - 1)) * Time.deltaTime;
             animator.SetBool("isFalling", false);
+            animator.SetBool("isJumping", true);
+
+
+        }
+        else if (playerRigidbody.velocity.y > 0.1f)
+        {
+            animator.SetBool("isJumping", true);
 
         }
         else
         {
             animator.SetBool("isFalling", false);
+            animator.SetBool("isJumping", false);
+
         }
 
 
@@ -156,5 +170,16 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheckCenter.transform.position, new Vector3(groundCheckCenter.transform.position.x, groundCheckCenter.transform.position.y - groundCheckRadius, groundCheckCenter.transform.position.z));
+    }
+
+
+    public void StartPush()
+    {
+        animator.SetBool("isPushing", true);
+    }
+
+    public void StopPush()
+    {
+        animator.SetBool("isPushing", false);
     }
 }
