@@ -10,6 +10,8 @@ public class SwitchRiddle : MonoBehaviour
     [SerializeField] private SpriteRenderer[] lamps;
     [SerializeField] GameObject[] winObject;
     [SerializeField] Sprite LampOn;
+    [SerializeField] Sprite LampOff;
+
     [SerializeField] private int[] order;
     [SerializeField] private PaulFX paulSound;
     int numberOfPressedSwitches;
@@ -42,7 +44,8 @@ public class SwitchRiddle : MonoBehaviour
         }
         else
         {
-            StartCoroutine(ResetCoroutine());
+            if (!isResetting)
+                StartCoroutine(ResetCoroutine());
         }
 
     }
@@ -58,7 +61,7 @@ public class SwitchRiddle : MonoBehaviour
         for (int i = 0; i < interactibles.Length; i++)
         {
             interactibles[i].ResetSwitch();
-            lamps[i].color = Color.white;
+            lamps[i].sprite = LampOff;
         }
         numberOfPressedSwitches = 0;
         isResetting = false;
