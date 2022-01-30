@@ -8,7 +8,7 @@ public class SwitchRiddle : MonoBehaviour
     [SerializeField]
     private RiddleInteractable[] interactibles;
     [SerializeField] private SpriteRenderer[] lamps;
-    [SerializeField] GameObject winObject;
+    [SerializeField] GameObject[] winObject;
     [SerializeField] Sprite LampOn;
     [SerializeField] private int[] order;
     [SerializeField] private PaulFX paulSound;
@@ -34,8 +34,10 @@ public class SwitchRiddle : MonoBehaviour
             if (numberOfPressedSwitches >= order.Length)
             {
                 isFinished = true;
-                //TODO: IMPLEMENT WIN LOGIK
-                winObject.SetActive(true);
+                for (int i = 0; i < winObject.Length; i++)
+                {
+                    winObject[i].GetComponent<Interactible>().Activate();
+                }
             }
         }
         else

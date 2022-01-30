@@ -5,6 +5,8 @@ using System.Linq;
 
 public class Switch : Interactible
 {
+    public Sprite LeverOn;
+    private SpriteRenderer renderer;
     public GameObject[] interactibleObject;
 
     bool triggerStay = false;
@@ -13,9 +15,12 @@ public class Switch : Interactible
 
     [SerializeField] private PaulFX ButtonpressSound;
 
+
+
     public void Start()
     {
       interactible = interactibleObject.Select(x => x.gameObject.GetComponent<Interactible>()).ToArray();
+      renderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,11 +35,13 @@ public class Switch : Interactible
     {
         if (Input.GetKeyDown(KeyCode.E) && triggerStay)
         {
+            renderer.sprite = LeverOn;
             EventManager.F_UseButton();
             for (int i = 0; i < interactible.Length; i++)
             {
                 interactible[i].Activate();
                 AudioManager.Instance.PlaySoundOneTime(ButtonpressSound);
+
             }
         }
     }
