@@ -90,6 +90,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopAudio()
+    {
+        
+    }
+
     private void OnDisable()
     {
         EventManager.sceneSwitch -= ChangeAudio;

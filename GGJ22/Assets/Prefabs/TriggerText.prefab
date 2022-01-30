@@ -74,7 +74,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1849475420707710112}
   TextVisibleSeconds: 3
-  Texts: []
+  artTalk:
+    Sound: {fileID: 8300000, guid: d97feda0a1f88c64e8743a9aa39ad025, type: 3}
+    volume: 1
+  ProgTalk:
+    Sound: {fileID: 8300000, guid: 1ce8df260bec9df4397a9aa5dbe2c0e3, type: 3}
+    volume: 1
+  Texts:
+  - 
 --- !u!1 &1849475420707710113
 GameObject:
   m_ObjectHideFlags: 0
