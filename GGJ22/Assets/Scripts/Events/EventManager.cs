@@ -13,6 +13,9 @@ public static class EventManager
     public delegate void UseButton();
     public static event UseButton useButton;
 
+    public delegate void ChangeBackground(bool isArtist);
+    public static event ChangeBackground changeBackground;
+
     public delegate void SwitchWorlds(World world);
     public static event SwitchWorlds switchWorlds;
     public static void F_SwitchEvent()
@@ -28,5 +31,10 @@ public static class EventManager
     public static void F_SwitchWorld(World world)
     {
         switchWorlds(world);
+    }
+
+    public static void F_SwitchBackground(bool isArtist)
+    {
+        changeBackground(isArtist);
     }
 }

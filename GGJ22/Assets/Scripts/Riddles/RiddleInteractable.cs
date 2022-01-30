@@ -12,6 +12,7 @@ public class RiddleInteractable : MonoBehaviour
     SpriteRenderer spriteRenderer;
     PlayerController playerController;
     [SerializeField] private SwitchRiddle switchRiddle;
+    [SerializeField] private PaulFX Sound;
     private void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -27,6 +28,7 @@ public class RiddleInteractable : MonoBehaviour
 
             EventManager.F_UseButton();
             switchRiddle.SetInterActible(NumberInOrder);
+            AudioManager.Instance.PlaySoundOneTime(Sound);
             spriteRenderer.sprite = activeSprite;
 
         }
