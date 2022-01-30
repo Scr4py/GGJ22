@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject groundCheckCenter;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private PaulFX sound;
 
     private Rigidbody2D playerRigidbody;
     float inputX;
@@ -115,6 +116,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isArtist", isArtist);
 
             }
+            AudioManager.Instance.PlaySoundOneTime(sound);
             EventManager.F_SwitchEvent();
             EventManager.F_SwitchWorld(isArtist ? World.ArtWorld : World.ProggerWorld);
             EventManager.F_SwitchBackground(isArtist);
