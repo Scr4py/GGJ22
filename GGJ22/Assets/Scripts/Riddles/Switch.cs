@@ -11,6 +11,7 @@ public class Switch : Interactible
 
     private Interactible[] interactible;
 
+    [SerializeField] private PaulFX ButtonpressSound;
 
     public void Start()
     {
@@ -33,6 +34,7 @@ public class Switch : Interactible
             for (int i = 0; i < interactible.Length; i++)
             {
                 interactible[i].Activate();
+                AudioManager.Instance.PlaySoundOneTime(ButtonpressSound);
             }
         }
     }

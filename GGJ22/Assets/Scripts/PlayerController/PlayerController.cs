@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fasterFallMulti;
     [SerializeField] private float lowFallMulti;
 
-
-
-
     [SerializeField] private GameObject groundCheckCenter;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
@@ -61,6 +58,7 @@ public class PlayerController : MonoBehaviour
             // playerRigidbody.AddForce(new Vector2(0, isArtist ? artistJumpForce : jumpForce), ForceMode2D.Impulse);
             playerRigidbody.velocity = Vector2.up * (isArtist ? artistJumpForce : jumpForce);
             isGrounded = false;
+            AudioManager.Instance.PlayJumpSound();
             animator.SetTrigger("Jumped");
             animator.SetBool("isFalling", false);
 
@@ -69,7 +67,6 @@ public class PlayerController : MonoBehaviour
         Collider2D hitCollider = Physics2D.OverlapCircle(groundCheckCenter.transform.position, groundCheckRadius, groundLayer);
         if (hitCollider)
         {
-            Debug.Log("isGrounded: " + isGrounded);
             isGrounded = true;
             animator.SetBool("isFalling", false);
         }
@@ -108,7 +105,7 @@ public class PlayerController : MonoBehaviour
             EventManager.F_SwitchWorld(isArtist ? World.ArtWorld : World.ProggerWorld);
         }
 
-        Debug.Log("Rigidbody Y " + playerRigidbody.velocity.y);
+
         if (!isGrounded && playerRigidbody.velocity.y > 0.03f)
         {
             Debug.Log("Macht das!");
@@ -123,12 +120,25 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
-        //else if(playerRigidbody.velocity.x <= 0)
         else if (inputX < 0)
         {
             gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (inputX == 0)
+        {
+            // animator.SetBool("isFalling", false);
+            animator.SetBool("isIdle", true);
+        }
+        else
+        {
+            animator.SetBool("isIdle", false);
 
         }
+
+        //else if(playerRigidbody.velocity.x <= 0)
+
+
         gameObject.transform.position = new Vector2(gameObject.transform.position.x + inputX * (isArtist ? artistMovementSpeed : movementSpeed) * Time.deltaTime, transform.position.y);
     }
 
