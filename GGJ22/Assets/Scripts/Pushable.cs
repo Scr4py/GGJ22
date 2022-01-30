@@ -6,6 +6,7 @@ public class Pushable : MonoBehaviour
 {
     bool isTriggered;
     PlayerController player;
+    [SerializeField] PaulFX push;
 
     private void Start()
     {
@@ -17,6 +18,11 @@ public class Pushable : MonoBehaviour
         if (player.isArtist && isTriggered)
         {
             player.StartPush();
+            if (!playsSound)
+            {
+                StartCoroutine(WaitForSound());
+
+            }
         }
         else
         {
@@ -31,6 +37,16 @@ public class Pushable : MonoBehaviour
             isTriggered = true;
         }
         //player.StartPush();
+    }
+
+    bool playsSound;
+    IEnumerator WaitForSound()
+    {
+        playsSound = true;
+        AudioManager.Instance.PlaySoundOneTime(push);
+        yield return new WaitForSeconds(2.0f);
+        playsSound = false;
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
