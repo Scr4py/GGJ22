@@ -9,6 +9,8 @@ public class Text : MonoBehaviour
     public TextMeshPro text;
     public float TextVisibleSeconds;
 
+    [SerializeField]
+    private string[] Texts;
 
     private void Start()
     {
@@ -19,6 +21,15 @@ public class Text : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            if (Texts.Length > 1)
+            {
+                int rnd = Random.Range(0, Texts.Length);
+                text.text = Texts[rnd];
+            }
+            else
+            {
+                text.text = Texts[0];
+            }
             text.gameObject.SetActive(true);
         }
     }
