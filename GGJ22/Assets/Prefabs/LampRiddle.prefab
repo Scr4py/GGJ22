@@ -320,6 +320,9 @@ MonoBehaviour:
   winObject: {fileID: 0}
   LampOn: {fileID: 21300000, guid: 90dc7d57ac8d71e4f952c417491d673e, type: 3}
   order: 0100000002000000040000000300000000000000
+  paulSound:
+    Sound: {fileID: 0}
+    volume: 0
 --- !u!1 &1469797762678468598
 GameObject:
   m_ObjectHideFlags: 0
