@@ -171,4 +171,15 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.DrawLine(groundCheckCenter.transform.position, new Vector3(groundCheckCenter.transform.position.x, groundCheckCenter.transform.position.y - groundCheckRadius, groundCheckCenter.transform.position.z));
     }
+
+
+    public void StartPush()
+    {
+        animator.SetBool("isPushing", true);
+    }
+
+    public void StopPush()
+    {
+        animator.SetBool("isPushing", false);
+    }
 }
