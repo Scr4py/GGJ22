@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fasterFallMulti;
     [SerializeField] private float lowFallMulti;
 
-
-
-
     [SerializeField] private GameObject groundCheckCenter;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
@@ -61,6 +58,7 @@ public class PlayerController : MonoBehaviour
             // playerRigidbody.AddForce(new Vector2(0, isArtist ? artistJumpForce : jumpForce), ForceMode2D.Impulse);
             playerRigidbody.velocity = Vector2.up * (isArtist ? artistJumpForce : jumpForce);
             isGrounded = false;
+            AudioManager.Instance.PlayJumpSound();
             animator.SetTrigger("Jumped");
             animator.SetBool("isFalling", false);
 

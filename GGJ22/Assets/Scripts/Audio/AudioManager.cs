@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource jumpAudioSource;
     [SerializeField] PaulFX jumpArtist;
     [SerializeField] PaulFX jumpProgger;
-    AudioSource[] OneTimeAudioSources;
+    [SerializeField] AudioSource[] OneTimeAudioSources;
 
 
     private void OnEnable()
@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            jumpAudioSource.PlayOneShot(jumpArtist.Sound, jumpProgger.volume);
+            jumpAudioSource.PlayOneShot(jumpProgger.Sound, jumpProgger.volume);
         }
     }
 
